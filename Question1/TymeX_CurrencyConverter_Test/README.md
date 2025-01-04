@@ -3,7 +3,7 @@
 ## Overview
 The **Currency Converter App** is an Android application built using **Jetpack Compose** and follows the **MVVM (Model-View-ViewModel)** architecture. It allows users to convert between various currencies with real-time exchange rates, featuring an elegant and user-friendly interface. This app is ideal for travelers, business professionals, and anyone dealing with multiple currencies.
 
-![Preview-Screen](https://firebasestorage.googleapis.com/v0/b/remood-177f5.appspot.com/o/preview_screen.jpg?alt=media&token=8a0211c1-4105-4f53-a154-4be2e0c9679d){ width=300px }
+![Preview-Screen](https://firebasestorage.googleapis.com/v0/b/remood-177f5.appspot.com/o/preview_screen.jpg?alt=media&token=8a0211c1-4105-4f53-a154-4be2e0c9679d){ width=50px }
 
 ---
 
