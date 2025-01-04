@@ -118,7 +118,7 @@ fun MainScreen (
             }else{
                 Text(text = mainViewModel.conversionResult.value, style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 70.sp, color = Color.Black))
                 Spacer(modifier = Modifier.height(10.dp))
-                Text(text = mainViewModel.rateResult.value, style = TextStyle(color = Color.Red,fontSize = 30.sp))
+                Text(text = "Rate: ${mainViewModel.rateResult.value}", style = TextStyle(color = Color.Red,fontSize = 30.sp))
 
             }
 

@@ -48,6 +48,7 @@ class MainViewModel @Inject constructor(
                 .onFailure {
                     println(it)
                     isLoading.value=false
+                    isToExpanded.value=false
                     GlobalScope.launch {
                         snackbarHostState.showSnackbar("Something went wrong")
                     }
