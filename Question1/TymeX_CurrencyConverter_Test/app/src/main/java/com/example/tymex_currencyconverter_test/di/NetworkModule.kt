@@ -1,7 +1,9 @@
 package com.example.tymex_currencyconverter_test.di
 
+import com.example.tymex_currencyconverter_test.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.google.gson.internal.GsonBuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +16,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
-
+    val apiKey = BuildConfig.API_KEY
     @Provides
     fun provideGSON(): Gson{
         return GsonBuilder().setLenient().create()
@@ -29,8 +31,10 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(client: OkHttpClient, gson: Gson) : Retrofit {
+
+
         return Retrofit.Builder()
-            .baseUrl("https://v6.exchangerate-api.com/v6/c7db9735f221cc0f0ef45ab7/")
+            .baseUrl("https://v6.exchangerate-api.com/v6/${apiKey}/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build();

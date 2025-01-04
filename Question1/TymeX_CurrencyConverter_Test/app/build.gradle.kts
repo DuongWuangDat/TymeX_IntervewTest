@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -5,12 +7,20 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
 
 }
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(localPropertiesFile.inputStream())
+}
+
+val apiKey: String = localProperties.getProperty("apiKey") ?: ""
 
 android {
     namespace = "com.example.tymex_currencyconverter_test"
     compileSdk = 34
 
     defaultConfig {
+
         applicationId = "com.example.tymex_currencyconverter_test"
         minSdk = 24
         targetSdk = 34
@@ -19,6 +29,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunner = "dagger.hilt.android.testing.HiltTestRunner"
+
+        buildConfigField("String", "API_KEY", "\"$apiKey\"")
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -42,6 +54,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig =true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
