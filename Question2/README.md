@@ -1,4 +1,4 @@
-#TymeX Interview Question 2.
+# TymeX Interview Question 2.
 Project including question 2.1 and 2.2 is developed using **Programing Language Java**
 
 ---
